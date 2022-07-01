@@ -17,7 +17,7 @@ const App: React.FC = () => {
         Kup wszystkie
       </Button>
       <Input placeholder='Podaj swoje imię' />
-      <Input placeholder='Podaj swoje imię' isLabelled label='Podaj imię' />
+      <Input inputType='secondary' placeholder='Podaj swoje imię' isLabelled label='Podaj imię' />
     </div>
   );
 };

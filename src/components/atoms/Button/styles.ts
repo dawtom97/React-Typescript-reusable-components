@@ -49,7 +49,7 @@ export const Container = styled.button<ButtonProps>`
   ${({ disabled }) => disabled && DISABLED};
 
   &:focus, &:hover {
-    box-shadow: 0px 5px 12px #7a7a7a;
+    box-shadow: 0px 5px 12px #e1e1e1;
   }
 
 `
