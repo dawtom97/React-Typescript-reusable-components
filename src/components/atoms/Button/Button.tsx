@@ -1,4 +1,4 @@
-import {forwardRef, MouseEvent, ReactNode } from 'react';
+import { forwardRef, MouseEvent, ReactNode } from 'react';
 import * as Styled from './styles';
 
 export type ButtonProps = {
@@ -10,20 +10,21 @@ export type ButtonProps = {
   ariaLabel?: string;
 };
 
-export const Button = forwardRef<HTMLButtonElement,ButtonProps> (
-  ({size,ariaLabel,onClick,disabled,color,children},ref) => {
-  return (
-    <Styled.Container
-      size={size}
-      aria-label={ariaLabel}
-      onClick={onClick}
-      disabled={disabled}
-      color={color}
-      ref={ref}
-    >
-      {children}
-    </Styled.Container>
-  );
-});
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ size = 'regular', ariaLabel, onClick, disabled, color = 'primary', children }, ref) => {
+    return (
+      <Styled.Container
+        size={size}
+        aria-label={ariaLabel}
+        onClick={onClick}
+        disabled={disabled}
+        color={color}
+        ref={ref}
+      >
+        {children}
+      </Styled.Container>
+    );
+  },
+);
 
-Button.displayName = 'Button'
+Button.displayName = 'Button';
