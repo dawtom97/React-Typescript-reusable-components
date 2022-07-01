@@ -1,38 +1,32 @@
-import { FC } from 'react';
-import styled from 'styled-components';
+import { FC, MouseEvent, ReactNode } from 'react';
+import { Container } from './styles';
 
-type TButtonComponent = {
-  children: string;
+export type ButtonProps = {
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
+  children?: ReactNode;
+  color?: 'primary' | 'secondary';
+  size?: 'small' | 'regular' | 'large';
+  disabled?: boolean;
   ariaLabel?: string;
-  size?: 'isBig' | 'isSmall' | 'isRegular';
-  btnType?: 'isPrimary' | 'isSecondary' | 'isTertiary'
 };
 
-const StyledButton = styled.button<TButtonComponent>`
-  width: ${({ size }) => {
-    if (size === 'isSmall') return '100px';
-    if (size === 'isBig') return '200px';
-    if (size === 'isRegular') return 'initial';
-    return 'initial';
-  }};
-  background-color: ${({ btnType }) => {
-    if (btnType === 'isPrimary') return 'red';
-    if (btnType === 'isSecondary') return 'blue';
-    if (btnType === 'isTertiary') return 'gold';
-    return 'initial';
-  }};
-  border-radius: 12px;
-`;
-
-export const Button: FC<TButtonComponent> = ({
+export const Button: FC<ButtonProps> = ({
+  onClick,
   children,
+  color = 'primary',
+  size = 'regular',
+  disabled,
   ariaLabel = 'Press the button',
-  size = 'isRegular',
-  btnType = 'isPrimary'
 }) => {
   return (
-    <StyledButton aria-label={ariaLabel} size={size} btnType={btnType}>
+    <Container
+      size={size}
+      aria-label={ariaLabel}
+      onClick={onClick}
+      disabled={disabled}
+      color={color}
+    >
       {children}
-    </StyledButton>
+    </Container>
   );
 };
