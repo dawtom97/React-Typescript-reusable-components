@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, forwardRef } from 'react';
 import * as Styled from './styles';
 
 export type InputProps = {
@@ -6,16 +6,19 @@ export type InputProps = {
   name?: string;
   isLabelled?: boolean;
   label?: string;
+
 };
 
-export const Input: FC<InputProps> = ({ placeholder, name, isLabelled, label = 'Label text'}) => {
+export const Input = forwardRef<HTMLInputElement,InputProps>(({ placeholder, name, isLabelled, label = 'Label text'},ref) => {
   if (isLabelled) {
     return (
-      <Styled.LabelledInput>
+      <Styled.LabelledInput ref={ref}>
         <Styled.Label>{label}</Styled.Label>
         <Styled.Input name={name} placeholder={placeholder} />
       </Styled.LabelledInput>
     );
   }
-  return <Styled.Input name={name} placeholder={placeholder} />;
-};
+  return <Styled.Input ref={ref} name={name} placeholder={placeholder} />;
+});
+
+Input.displayName = 'Input';

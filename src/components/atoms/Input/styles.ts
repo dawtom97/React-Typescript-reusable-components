@@ -6,10 +6,12 @@ export const Input = styled.input<InputProps>`
 `
 
 export const LabelledInput = styled.div`
-  display: flex;
-  flex-direction: column;
+  
+  & > label,input {
+    display: block;
+  }
 `
 
 export const Label = styled.label`
-
+   font-size: 1.3rem;
 `
