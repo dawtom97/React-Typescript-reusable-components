@@ -1,5 +1,5 @@
 import { FC, MouseEvent, ReactNode } from 'react';
-import { Container } from './styles';
+import * as Styled from './styles';
 
 export type ButtonProps = {
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
@@ -19,7 +19,7 @@ export const Button: FC<ButtonProps> = ({
   ariaLabel = 'Press the button',
 }) => {
   return (
-    <Container
+    <Styled.Container
       size={size}
       aria-label={ariaLabel}
       onClick={onClick}
@@ -27,6 +27,6 @@ export const Button: FC<ButtonProps> = ({
       color={color}
     >
       {children}
-    </Container>
+    </Styled.Container>
   );
 };
