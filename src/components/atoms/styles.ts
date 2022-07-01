@@ -14,16 +14,19 @@ const COLOR = {
 
 const SIZE = {
     small: css`
-      padding: 5px 7.5px;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      min-width: 80px;
+      min-height: 23px;
     `,
     regular: css`
-      padding: 8px 13px;
-      font-size: 1.6rem;
+      min-height: 30px;
+      font-size: 1.4rem;
+      min-width: 100px;
     `,
     large: css`
-      padding : 12px 15px ;
-      font-size: 1.6rem;
+      min-height: 37px;
+      font-size: 1.5rem;
+      min-width: 120px;
     `
 }
 
@@ -37,15 +40,15 @@ const DISABLED = css`
 export const Container = styled.button<ButtonProps>`
   cursor: pointer;
   border: none;
-  border-radius: 50px;
+  border-radius: 25px;
   font-weight: 500;
   outline: none;
   transition: all 0.2s;
-  ${({color}) => color && COLOR[color]};
-  ${({size})=> size && SIZE[size]};
-  ${({disabled}) => disabled && DISABLED};
+  ${({ color }) => color && COLOR[color]};
+  ${({ size }) => size && SIZE[size]};
+  ${({ disabled }) => disabled && DISABLED};
 
-  &:focus {
+  &:focus, &:hover {
     box-shadow: 0px 5px 12px #7a7a7a;
   }
 
