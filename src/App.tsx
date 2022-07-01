@@ -8,7 +8,9 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Heading level='h1'>Jebany cyrk</Heading>
+      <Heading level='h1'>cyrk</Heading>
+      <Heading isThin isUpperCase level='h1'>cyrk</Heading>
+      <Heading level='h3'>cyrk</Heading>
       <Button ariaLabel='Buy now button' color='primary' size='small'>
         Kup teraz
       </Button>
