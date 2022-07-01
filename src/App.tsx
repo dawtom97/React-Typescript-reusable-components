@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { Button } from './components/atoms/Button/Button';
+import { Heading } from './components/atoms/Heading/Heading';
 import { Input } from './components/atoms/Input/Input';
 
 const App: React.FC = () => {
@@ -7,10 +8,11 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Button ariaLabel='Buy now button' color='primary'>
+      <Heading level='h1'>Jebany cyrk</Heading>
+      <Button ariaLabel='Buy now button' color='primary' size='small'>
         Kup teraz
       </Button>
-      <Button ariaLabel='Buy all' color='secondary' size='small'>
+      <Button ariaLabel='Buy all' color='secondary' size='regular'>
         Read more
       </Button>
       <Button ariaLabel='Buy all' color='primary' size='large'>
