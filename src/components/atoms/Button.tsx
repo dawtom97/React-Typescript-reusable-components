@@ -4,7 +4,7 @@ import { Container } from './styles';
 export type ButtonProps = {
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   children?: ReactNode;
-  color?: 'primary' | 'secondary';
+  color?: 'primary' | 'secondary' | 'tertiary';
   size?: 'small' | 'regular' | 'large';
   disabled?: boolean;
   ariaLabel?: string;
