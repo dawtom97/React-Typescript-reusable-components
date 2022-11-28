@@ -1,5 +1,5 @@
 import { FC, MouseEvent, ReactNode } from 'react';
-import { Container } from './styles';
+import { Container } from './Button/styles';
 
 export type ButtonProps = {
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
